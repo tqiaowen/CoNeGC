@@ -35,7 +35,7 @@ Issues and feedback can be submitted through GitHub or to <a href="mailto:qiaowe
 ### 1. Preparation of Google Drive Account
 Please ensure sufficient storage space of more than 1 GB. Space requirement varies with the organism and number of experiments you wish to analyse.
 
-With your Google Drive account, create the a directory containing the following files:
+With your Google Drive account, create a directory containing the following files:
 
 | File | Remarks |
 |:--- |:--- |
