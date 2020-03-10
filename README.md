@@ -7,7 +7,7 @@ If you use LSTrAP-Cloud in your research, please cite:
 
 ## What is LSTrAP-Cloud?
 
-LSTrAP-Cloud is a pipeline designed for building co-expression networks from RNA-seq data (fastq files from <a href="https://www.ebi.ac.uk/ena">ENA</a>) on Goolge Colaboratory (Colab). Leveraging on the user-friendliness of the Colab interface, LSTrAP-Cloud allows users to analyse large scale transcriptome data without having to access the linux terminal, making it accessible to both bioinformaticians and biologist. To get started, we have provided a tutorial based on example data found [here](sample_data). While the pipeline was designed for plants, we have also made the script compatible with non-plant organisms. 
+LSTrAP-Cloud is a pipeline designed for building co-expression networks from RNA-seq data (fastq files from <a href="https://www.ebi.ac.uk/ena">ENA</a>) on Goolge Colaboratory (Colab). Leveraging on the user-friendliness of the Colab interface, LSTrAP-Cloud allows users to analyse large scale transcriptome data without having to access the linux terminal, making it accessible to both bioinformaticians and biologist. To get started, we have provided a tutorial based on example data found [here](examples). While the pipeline was designed for plants, we have also made the script compatible with non-plant organisms. 
 
 ## Changelog
 
@@ -20,8 +20,8 @@ LSTrAP-Cloud is a pipeline designed for building co-expression networks from RNA
   3. [Streaming RNA-seq data](#3-streaming-rna-seq-data)
   4. [Generating Neighbourhood and Network Files](#4-generating-neighbourhood-and-network-files)  
     4.1 [User input of variables](#41-user-input-of-variables)  
-    4.2 [Quality control of samples](#42-quality-control-of-samples)  
-    4.3 [Setting the threshold for acceptable RunIDs](#43-setting-the-threshold-for-acceptable-runids)  
+    4.2 [Setting the threshold for acceptable RunIDs](#42-setting-the-threshold-for-acceptable-runids)  
+    4.3 [Creating the gene co-expression network](#43-creating-the-gene-co-expression-network)  
 
 Feel free to <a href="mailto:qiaowen001@e.ntu.edu.sg">contact us</a> if you have further questions.
 
@@ -32,6 +32,8 @@ LSTrAP-Cloud will not have been possible without the various open-source project
 Issues and feedback can be submitted through GitHub or to <a href="https://www.plant.tools/team---qiao-wen.html">Qiao Wen Tan</a>.
 
 ## Tutorial
+[Example files](examples) are provided to help you get started with the pipeline.
+
 ### 1. Preparation of Google Drive Account
 Please ensure sufficient storage space of more than 1 GB. Space requirement varies with the organism and number of experiments you wish to analyse.
 
@@ -104,9 +106,20 @@ After filling up cell 2.2, run cells 2.2 to 2.6 to display the quality control t
 
 <strong>Note!</strong>  
   * If you are using a non-plant organism, please provide a file based on the [mercator format](examples/mercator_non-plant.txt). Gene identifiers should be in <strong>lowercase</strong>.
-  * The gene identifier provided in the last field should be identical to that of the CDS file
 
-#### 4.2 Quality control of samples
-After reviewing the quality control table and scatter plots, adjust the sliders in '2.7 Determine Quality Control Cutoff' to select the desired threshold levels.
+#### 4.2 Setting the threshold for acceptable RunIDs
+After reviewing the quality control table and scatter plots, adjust the sliders in '2.7 Determine Quality Control Cutoff' to select the desired threshold levels. After adjusting the sliders, run cells 2.7 and 2.8 to extract the selected experiments and compile the gene expression matrix.
 ![Quality control](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/qc.png?raw=true)  
-#### 4.3 Setting the threshold for acceptable RunIDs
+#### 4.3 Creating the gene co-expression network
+After the gene expression matrix has been created, adjust the parameters in cell '2.9 Network options'. After adjusting the variables, run all the cells from 2.9 to 2.14.
+| Variable | Remarks |
+|:--- |:--- |
+| goi | The gene identifier provided should be identical to that of the CDS file |
+| cutoff | Pearson Correlation Coefficient cutoff to be used |
+| neighbourhood_size | Number of neighbours that the network should contain excluding the gene of interest |
+| is_a_plant | To indicate if the organism used for analysis is a plant |
+
+![Network options](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/nw_options.png?raw=true) 
+
+The PNG and JSON format of the network can be downloaded by clicking on the links. The JSON file can be opened in [Cytoscape desktop](https://cytoscape.org/) for further modifications to the network. The legend of the network and information regarding the genes in the network can be found in cells '2.13 Legend for nodes based on Mapman Bins:' and '2.14 Details of Genes in Network' respectively.
+![Network options](https://github.com/tqiaowen/LSTrAP-Cloud/blob/master/img/nw_eg.png?raw=true)
