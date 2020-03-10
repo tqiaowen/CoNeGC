@@ -23,13 +23,11 @@ LSTrAP-Cloud is a pipeline designed for building co-expression networks from RNA
     4.2 [Setting the threshold for acceptable RunIDs](#42-setting-the-threshold-for-acceptable-runids)  
     4.3 [Creating the gene co-expression network](#43-creating-the-gene-co-expression-network)  
 
-Feel free to <a href="mailto:qiaowen001@e.ntu.edu.sg">contact us</a> if you have further questions.
-
 ## Acknowledgements
 LSTrAP-Cloud will not have been possible without the various open-source projects.
 
 ## Contact
-Issues and feedback can be submitted through GitHub or to <a href="https://www.plant.tools/team---qiao-wen.html">Qiao Wen Tan</a>.
+Issues and feedback can be submitted through GitHub or to <a href="mailto:qiaowen001@e.ntu.edu.sg">Qiao Wen Tan</a>.
 
 ## Tutorial
 [Example files](examples) are provided to help you get started with the pipeline.
@@ -41,8 +39,8 @@ With your Google Drive account, create the a directory containing the following 
 
 | File | Remarks |
 |:--- |:--- |
-| runid.txt | Contains list of RunIDs to be streamed from ENA. Example [here](examples/) |
-| CDS.fastq | CDS file of the organism RNA-seq experiments are to be mapped to. gz compressed files are also accepted. The CDS of *N. tabacum* (Nitab-v4.5_cDNA_Edwards2017.fasta) can be downloaded at [SolGenomics](https://solgenomics.net/) |
+| runid.txt | Contains list of RunIDs to be streamed from ENA. Example [here](examples/runid_Nta_short.txt) |
+| CDS.fastq | CDS file of the organism RNA-seq experiments are to be mapped to. gz compressed files are also accepted. The CDS of *N. tabacum* ([Nitab-v4.5_cDNA_Edwards2017.fasta](examples/Nitab-v4.5_cDNA_Edwards2017.fasta)) can be downloaded at [SolGenomics](https://solgenomics.net/) |
 
 ### 2. Setting up Google Colaboratory
 #### 2.1 Opening the pipeline on Google Colab
@@ -106,6 +104,7 @@ After filling up cell 2.2, run cells 2.2 to 2.6 to display the quality control t
 
 <strong>Note!</strong>  
   * If you are using a non-plant organism, please provide a file based on the [mercator format](examples/mercator_non-plant.txt). Gene identifiers should be in <strong>lowercase</strong>.
+  * An example of the [mercator output](examples/mercator_Nta.txt) for *N. tabacum* is also provided.
 
 #### 4.2 Setting the threshold for acceptable RunIDs
 After reviewing the quality control table and scatter plots, adjust the sliders in '2.7 Determine Quality Control Cutoff' to select the desired threshold levels. After adjusting the sliders, run cells 2.7 and 2.8 to extract the selected experiments and compile the gene expression matrix.
