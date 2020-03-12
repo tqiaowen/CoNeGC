@@ -55,7 +55,8 @@ A cell can be run by clicking on the play button at the top left of each cell. T
   * Runtime > Run all (Crtl+F9): Runs all cells in the notebook
   * Runtime > Run before (Crtl+F8): Runs all cells before the cell in focus
   * Runtime > Run after (Crtl+F10): Runs all cells after the cell in focus
- Tip: To prevent the notebook from going idle while the script is running, a javascript code can be implemented in the web browser. Open the browser's javascript console and paste the following code and hit enter:  
+
+Tip: To prevent the notebook from going idle while the script is running, a javascript code can be implemented in the web browser. Open the browser's javascript console and paste the following code and hit enter:  
  
  ```javascript
 function ClickConnect(){
